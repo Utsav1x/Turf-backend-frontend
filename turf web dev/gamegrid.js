@@ -36,6 +36,7 @@ setTimeout(() -> {
 document.querySelector(".alert").style.display = "none";
 }, 3000);
 
+
 //reset the form
 document.getElementById("contactform").reset();
 
