@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title> Create Booking</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <h1>Create Booking</h1>
+                <p>Enter booking details</p>
+            </div>
+        </header>
+        <div class="main-container">
+            <section class="create-booking">
+                <form id="bookingForm" onsubmit="createbooking(event)">
+                    <div class="form-group">
+                        <label for ="datatime">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required onchange="validateForm()">
+                    </div>
+
+                    <div class="form-group"> 
+                        <label for ="turfname">Turfname:</label>
+                        <input type="text" id="turfname" name="turfname" placeholder="Enter turfname" required onchange="validateForm()">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slot">Select Slot:</label>
+                        <select id="slotid" name="slotid" disabled required>
+                            <option value="">Select a slot</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for ="paymentmethod">Payment Method:</label>
+                        <input type="text" id="paymentmethod" name="paymentmethod" placeholder="Enter your mode of payment">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentdonestatus">Payment Done:</label>
+                        <input type="radio" id="paymentdonestatus" name="paymentdonestatus" value="true">
+                        <label for="paymentdonestatus-true">True</label>
+                        <input type="radio" id="paymentdonestatus" name="paymentdonestatus" value="false">
+                        <label for="paymentdonestatus-false">False</label>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="approved">Approved:</label>
+                        <input type="radio" id="approved" name="approved" value="true">
+                        <label for="approved-true">True</label>
+                        <input type="radio" id="approved" name="approved" value="false">
+                        <label for="approved-false">False</label>
+                    </div>
+
+                    <button type="submit" onclick="createBooking(event)">Create booking</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="createbooking.js"></script>
+</body>
+</html>

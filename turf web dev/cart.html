@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Turf Booking Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .turf-list, .cart {
+      max-width: 800px;
+      margin: 30px auto;
+    }
+
+    .turf-item, .cart-item {
+      background: white;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e65c00;
+    }
+
+    .cart-summary {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Book Your Turf</h2>
+
+  <!-- Turf Booking List -->
+  <div class="turf-list">
+    <div class="turf-item">
+      <span>GreenField Turf - 7:00 AM Slot</span>
+      <button onclick="addToCart('GreenField Turf - 7:00 AM', 500)">Add ₹500</button>
+    </div>
+    <div class="turf-item">
+      <span>Skyline Arena - 9:00 AM Slot</span>
+      <button onclick="addToCart('Skyline Arena - 9:00 AM', 600)">Add ₹600</button>
+    </div>
+    <div class="turf-item">
+      <span>KickOff Ground - 6:00 PM Slot</span>
+      <button onclick="addToCart('KickOff Ground - 6:00 PM', 700)">Add ₹700</button>
+    </div>
+  </div>
+
+  <!-- Cart Section -->
+  <h2>Your Cart</h2>
+  <div class="cart" id="cartItems"></div>
+  <div class="cart-summary" id="totalAmount">Total: ₹0</div>
+
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      total += price;
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      total -= cart[index].price;
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartContainer = document.getElementById('cartItems');
+      const totalDisplay = document.getElementById('totalAmount');
+      cartContainer.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+          <span>${item.name} - ₹${item.price}</span>
+          <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartContainer.appendChild(cartItem);
+      });
+
+      totalDisplay.innerText = Total: ₹${total};
+    }
+  </script>
+
+</body>
+</html>

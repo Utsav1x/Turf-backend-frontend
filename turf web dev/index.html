@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GameGrid</title>
+    <link rel="icon" sizes="192x192"
+       img="./gamegrid.png">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700;900&display=swap" rel="stylesheet" />
+</head>
+
+<body onload="loadTurfs()">
+    <script src="index.js"></script>
+    <div class="main-container">
+        <!-- Navbar Section -->
+        <header class="navbar">
+            <div class="global-nav">
+                <div class="nav">
+                    <div class="left">
+                        <a href="#home" class="logo">
+                           <img src ="./gamegrid.png" alt="GameGrid Logo" height="49" width="49"/>
+                        </a>
+                        <div class="location-div">
+                            <span class="location">Mumbai, India</span>
+                            <span class="arrow-down"><i class="fa-solid fa-angle-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <ul class="items">
+                            <li>
+                                <div class="nav-item">
+                                    <a href="search.html">
+                                        <svg class="_1GTCc" viewBox="5 -1 12 25" height="17" width="17" fill="#686b78">
+                                            <path
+                                                d="M17.6671481,17.1391632 L22.7253317,22.1973467 L20.9226784,24 L15.7041226,18.7814442 C14.1158488,19.8024478 12.225761,20.3946935 10.1973467,20.3946935 C4.56550765,20.3946935 0,15.8291858 0,10.1973467 C0,4.56550765 4.56550765,0 10.1973467,0 C15.8291858,0 20.3946935,4.56550765 20.3946935,10.1973467 C20.3946935,12.8789625 19.3595949,15.3188181 17.6671481,17.1391632 Z M10.1973467,17.8453568 C14.4212261,17.8453568 17.8453568,14.4212261 17.8453568,10.1973467 C17.8453568,5.97346742 14.4212261,2.54933669 10.1973467,2.54933669 C5.97346742,2.54933669 2.54933669,5.97346742 2.54933669,10.1973467 C2.54933669,14.4212261 5.97346742,17.8453568 10.1973467,17.8453568 Z">
+                                            </path>
+                                        </svg>
+                                        <span>Search</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="nav-item">
+                                    <a href="offers.html">
+                                        <svg class="_1GTCc" viewBox="0 0 32 32" height="19" width="19" fill="#686b78">
+                                            <path
+                                                d="M14.2 2.864l-1.899 1.38c-0.612 0.447-1.35 0.687-2.11 0.687h-2.352c-0.386 0-0.727 0.248-0.845 0.613l-0.728 2.238c-0.235 0.721-0.691 1.348-1.302 1.79l-1.905 1.385c-0.311 0.226-0.442 0.626-0.323 0.991l0.728 2.241c0.232 0.719 0.232 1.492-0.001 2.211l-0.727 2.237c-0.119 0.366 0.011 0.767 0.323 0.994l1.906 1.384c0.61 0.445 1.064 1.070 1.3 1.79l0.728 2.24c0.118 0.365 0.459 0.613 0.844 0.613h2.352c0.759 0 1.497 0.24 2.107 0.685l1.9 1.381c0.313 0.227 0.736 0.227 1.048 0.001l1.9-1.38c0.613-0.447 1.349-0.687 2.11-0.687h2.352c0.384 0 0.726-0.248 0.845-0.615l0.727-2.235c0.233-0.719 0.688-1.346 1.302-1.794l1.904-1.383c0.311-0.226 0.442-0.627 0.323-0.993l-0.728-2.239c-0.232-0.718-0.232-1.49 0.001-2.213l0.727-2.238c0.119-0.364-0.012-0.765-0.324-0.992l-1.901-1.383c-0.614-0.445-1.070-1.074-1.302-1.793l-0.727-2.236c-0.119-0.366-0.461-0.614-0.845-0.614h-2.352c-0.76 0-1.497-0.239-2.107-0.685l-1.903-1.382c-0.313-0.227-0.736-0.226-1.047-0.001zM16.829 0.683l1.907 1.385c0.151 0.11 0.331 0.168 0.521 0.168h2.352c1.551 0 2.927 1 3.408 2.475l0.728 2.241c0.057 0.177 0.169 0.332 0.321 0.442l1.902 1.383c1.258 0.912 1.784 2.531 1.304 4.006l-0.726 2.234c-0.058 0.182-0.058 0.375-0.001 0.552l0.727 2.237c0.48 1.477-0.046 3.096-1.303 4.007l-1.9 1.38c-0.153 0.112-0.266 0.268-0.324 0.447l-0.727 2.237c-0.48 1.477-1.856 2.477-3.408 2.477h-2.352c-0.19 0-0.37 0.058-0.523 0.17l-1.904 1.383c-1.256 0.911-2.956 0.911-4.213-0.001l-1.903-1.384c-0.15-0.11-0.332-0.168-0.521-0.168h-2.352c-1.554 0-2.931-1.001-3.408-2.477l-0.726-2.234c-0.059-0.18-0.173-0.338-0.324-0.448l-1.902-1.381c-1.258-0.912-1.784-2.53-1.304-4.008l0.727-2.235c0.058-0.179 0.058-0.373 0.001-0.551l-0.727-2.236c-0.481-1.476 0.046-3.095 1.302-4.006l1.905-1.385c0.151-0.11 0.264-0.265 0.323-0.444l0.727-2.235c0.478-1.476 1.855-2.477 3.408-2.477h2.352c0.189 0 0.371-0.059 0.523-0.17l1.902-1.383c1.256-0.911 2.956-0.911 4.212 0zM18.967 23.002c-1.907 0-3.453-1.546-3.453-3.453s1.546-3.453 3.453-3.453c1.907 0 3.453 1.546 3.453 3.453s-1.546 3.453-3.453 3.453zM18.967 20.307c0.419 0 0.758-0.339 0.758-0.758s-0.339-0.758-0.758-0.758c-0.419 0-0.758 0.339-0.758 0.758s0.339 0.758 0.758 0.758zM10.545 14.549c-1.907 0-3.453-1.546-3.453-3.453s1.546-3.453 3.453-3.453c1.907 0 3.453 1.546 3.453 3.453s-1.546 3.453-3.453 3.453zM10.545 11.855c0.419 0 0.758-0.339 0.758-0.758s-0.339-0.758-0.758-0.758c-0.419 0-0.758 0.339-0.758 0.758s0.339 0.758 0.758 0.758zM17.78 7.882l2.331 1.352-7.591 13.090-2.331-1.352 7.591-13.090z">
+                                            </path>
+                                        </svg>
+                                        <span>Offers</span>
+                                    </a>
+                                </div>
+                            </li>
+                           <li>
+                            <div class="nav-item">
+                                <a href="login.html">
+                                <svg class="_1GTCc" viewBox="6 0 12 24" height="19" width="18" fill="#686b78">
+                                    <path d="M11.9923172,11.2463768..."></path> <!-- your path remains unchanged -->
+                                </svg>
+                                <span>Sign In</span>
+                                </a>
+                            </div>
+                            </li>
+                            <li>
+                                <div class="nav-item">
+                                    <a href="cart.html">
+                                        <svg class="_1GTCc _2MSid" viewBox="-1 0 37 32" height="20" width="20"
+                                            fill="#686b78">
+                                            <path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z">
+                                            </path>
+                                        </svg>
+                                        <span>Cart</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Section -->
+        <main class="main-container">
+            <section class="restaurants">
+                <div class="container">
+                    <div class="item-bar">
+                        <div class="number">Turfs</div>
+                        <div class="filters">
+                            <div class="Near me">Near You</div>
+                            <div class="delivery">Popular</div>
+                            <div class="rating">Rating</div>
+                            <div class="cost-lh">Cost: Low to High</div>
+                            <div class="cost-hl">Cost: High to Low</div>
+                        </div>
+                    </div>
+                    <div id="turfs-container"> </div>
+                    <!-- <div class="restaurant-list">
+                        <div class="place">
+                            <a href="/restaurants/waffld-domlur-bangalore-303446" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN" 
+                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnIQPHba0_TS5g3a3_mMoDTBuUpXFWvO8jog&s"
+                                                width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title"></div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">Kaaverni turf</div>
+                                            <div class="food-items"
+                                                title="Italian, Pizzas, Fast Food, Mexican, Desserts, Beverages">
+                                                <a href="https://www.google.com/maps/search/?api=1&query=19.2417,72.8398" target="_blank">
+                                                Eskar Rd, Khutar pada, Eksar Village, Eksar, Borivali West, Mumbai, Maharashtra 400103
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>3.8</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>42 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹1000 For One Hour</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">50% off | Use WELCOME50</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrtYR7wpn6deZs3Gjp9ZG0it9A-hUqjZHk2A&s" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">NSF TURF ( A MULTI SPORTS ARENA)</div>
+                                            <div class="food-items"
+                                            title="Chinese, Thai, Asian, Beverages, Desserts, Oriental, Seafood, Pan-Asian">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=19.2067,72.8477" target="_blank">
+                                                ROOF TOP, PLOT NO 1, SAI NAGAR, Mahatma Gandhi CROSS Rd No 1, Kandivali West, Mumbai, Maharashtra 400067
+                                            </a></div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>4.0</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>33 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹2000 For One Hour </div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">25% off | Use WELCOME25</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitXpXQcrTOXDP80xKMJhbOqwQNDiCTw5B_g&s" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">Janupada home turf</div>
+                                            <div class="food-items"
+                                            title="Waffle, Bakery, Desserts, Beverages">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=19.210662,72.877788" target="_blank">
+                                                Thakur Village Rd, Kandivali, Kandivali East, Mumbai, Maharashtra 400101</a></div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>3.9</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>34 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹3200 For Two Hours</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">50% off | Use WELCOME50</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ-pN-LK9o9-uaqani7FbGAcV8dty3Svyv4g&s" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">Pavilion sports arena (turf)</div>
+                                            <div class="food-items"
+                                            title="Italian-American, Fast Food, Snacks, Beverages">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=19.287381,72.880436" target="_blank">
+                                                Near Unique Gardens, Phase 4, Gaurav City, Mira Road East, Maharashtra 401107
+                                            </a>
+                                        </div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>5.0</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>39 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹1200 For Two Hours</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">50% off | Use WELCOME50</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN"  src="data:image/jpeg;base64,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" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">Gurunanak Sports Turf</div>
+                                            <div class="food-items"
+                                            title="Address">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=19.077237,72.873106" target="_blank">
+                                            ROOM NO 06, YASIN CHAWL, Shastri Nagar Rd, Kolivery Village, Kunchi Kurve Nagar, Kalina, Santacruz East, Mumbai, Maharashtra 400029
+                                            </a>
+                                        </div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>4.7</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>40 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹1000 For One Hour</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">50% off | Use WELCOME50</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN"  src="data:image/jpeg;base64,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" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">St. Andrews TurfPark</div>
+                                            <div class="food-items"
+                                            title="Address">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=19.056401,72.827144" target="_blank">
+                                                St. Andrews School Ground, St Domnic Rd, Bandra West, Mumbai, Maharashtra 400050
+                                            </a></div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>4.6</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>56 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹4000 For Two Hours</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">50% off | Use WELCOME50</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN"  src="data:image/jpeg;base64,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" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">Five Nine Turf</div>
+                                            <div class="food-items"
+                                            title="Address">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=19.109006,72.883514" target="_blank">
+                                                Gamdevi, Marol, Andheri East, Mumbai, Maharashtra 400059
+                                            </a>
+                                        </div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>4.4</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>38 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹2400 For Two Hours</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">15% off | Use FLAT15</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="place">
+                            <a href="" class="place-link">
+                                <div class="list-item">
+                                    <div class="item-content">
+                                        <div class="top-img">
+                                            <img class="_2tuBw _12_oN" alt=" &amp; Bar" src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrr7oPrdCczxbAKgdTmIYxOrgIPMEzIHZ0xRfhaI6JfsqHgYWRRxnx6OzQnmlcNdvtdGpJJ56G2YqE3ctBtAJfX7n0AHNsDO_e5Tqg4KACTh5K5tU21mA90ohCCca6hCeGrsWay=s680-w680-h510-rw" width="254" height="160">
+                                        </div>
+                                        <div class="status" style="
+                                        background: rgb(58, 60, 65);
+                                        color: rgb(255, 255, 255);
+                                        border-color: rgb(30, 32, 35) transparent;">
+                                            <div class="status-title">Promoted</div>
+                                        </div>
+                                        <div class="place-name-div">
+                                            <div class="name">TurfPark Mahalaxmi</div>
+                                            <div class="food-items"
+                                            title="American, Mexican">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=18.988202,72.825101" target="_blank">
+                                                Evergreen Industrial Estate, Shakti Mills Ln, Mahalakshmi, Mumbai, Maharashtra 400013
+                                            </a>
+                                        </div>
+                                        </div>
+                                        <div class="info-div">
+                                            <div class="rating">
+                                                <span class="icon-star"><i class="fa-solid fa-star"></i></span>
+                                                <span>4.3</span>
+                                            </div>
+                                            <div>•</div>
+                                            <div>46 MINS</div>
+                                            <div>•</div>
+                                            <div class="price">₹900 For One Hour</div>
+                                        </div>
+                                        <div class="offer-div">
+                                            <span class="icon-offer-filled"><i class="fa-solid fa-tag"></i></span>
+                                            <span class="offer-text">35% off | Use FOOT35</span>
+                                        </div>
+                                    </div>
+                                    <div class="quick-view">
+                                        <span role="button" aria-label="Open" class="view-btn">QUICK VIEW</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <!--<footer class="footer">
+            <div class="footer-content">
+                <div class="points">
+                    FOR CONSUMER
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">About us</a></li>
+                        <li class="footer-li"><a href="#">Team</a></li>
+                        <li class="footer-li"><a href="#">Careers</a></li>
+                        <li class="footer-li"><a href="#">Partnership</a></li>
+                        <li class="footer-li"><a href="#">About GameGrid</a></li>
+                        <li class="footer-li"><a href="#">FAQs</a></li>
+                        <li class="footer-li"><a href="#">Equipment</a></li>
+                      
+                    </ul>
+                </div>
+                <div class="points">
+                    CONTACT US
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Help & Support</a></li>
+                        <li class="footer-li"><a href="#"> +91 9090989765  </a></li>
+                        <li class="footer-li"><a href="#">GridGame@gmail.com</a></li>
+
+                    </ul>
+                </div>
+                <div class="points">
+                    LEGAL
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Terms & Conditions</a></li>
+                        <li class="footer-li"><a href="#">Refund & Cancellation</a></li>
+                        <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-li"><a href="#">Cookie Policy</a></li>
+                        <li class="footer-li"><a href="#">Offer Terms</a></li>
+                        <li class="footer-li"><a href="#">Phishing & Fraud</a></li>
+                    </ul>
+                </div>
+                <div class="points">
+                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
+                        height="54" />
+                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"
+                        height="54" />
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- <div class="box">
+        <div class="left">
+            <div class="top">
+            <div class="logo">
+                <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Swiggy_logo.svg/2560px-Swiggy_logo.svg.png"
+                />
+            </div>
+            <div class="buttons">
+                <a href="#" id="btn1">Login</a>
+                <a href="#" id="btn2">Sign up</a>
+            </div>
+            </div>
+            <div class="text">
+            <h1 id="text-head">Hungry?</h1>
+            <p>Order food from favourite restaurants near you.</p>
+            </div>
+            <div class="location-box">
+            <div class="location-search">
+                <input type="text" placeholder="Enter your delivery location" />
+            </div>
+            <div class="location-button">
+                <a href="#">FIND FOOD</a>
+            </div>
+            </div>
+            <div class="bottom">
+            <h4>POPULAR CITIES IN INDIA</h4>
+            <ul>
+                <li><a href="#">Ahmedabad</a></li>
+                <li><a href="#">Bangalore</a></li>
+                <li><a href="#">Chennai</a></li>
+                <li><a href="#">Delhi</a></li>
+                <li><a href="#">Gurgaon</a></li>
+                <li><a href="#">Hyderabad</a></li>
+                <li><a href="#">Kolkata</a></li>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Pune</a></li>
+                <li><a href="#">& more.</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="right"></div>
+        </div>
+        <div class="function">
+        <div class="fun-box">
+            <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf"
+            width="105"
+            height="199"
+            />
+            <h4>No Minimum Order</h4>
+            <p>
+            Order in for yourself or for the group, with no restrictions on order
+            value
+            </p>
+        </div>
+        <div class="fun-box">
+            <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy"
+            width="112"
+            height="206"
+            />
+            <h4>Live Order Tracking</h4>
+            <p>
+            Know where your order is at all times, from the restaurant to your
+            doorstep
+            </p>
+        </div>
+        <div class="fun-box">
+            <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn"
+            width="124"
+            height="188"
+            />
+            <h4>Lightning-Fast Delivery</h4>
+            <p>
+            Experience Swiggy's superfast delivery for food delivered fresh & on
+            time
+            </p>
+        </div>
+        </div>
+        <div class="app">
+        <div class="app-text">
+            <h1>Restaurants in your pocket</h1>
+            <p>
+            Order from your favorite restaurants & track on the go, with the
+            all-new Swiggy app.
+            </p>
+            <div class="app-button">
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/play_ip0jfp"
+                height="54"
+            />
+            <img
+                src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_108/iOS_ajgrty"
+                height="54"
+            />
+            </div>
+        </div>
+        <div class="app-image">
+            <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/pixel_wbdy4n"
+            height="489"
+            width="384"
+            />
+            <img
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_768,h_978/iPhone_wgconp_j0d1fn"
+            height="489"
+            width="384"
+            />
+        </div>
+    </div> -->
+</body>
+
+</html>

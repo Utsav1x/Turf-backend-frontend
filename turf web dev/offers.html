@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turf Offers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .offers-section {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .offers-title {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .offer-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .offer-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+
+    .offer-details {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .offer-validity {
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="offers-section">
+    <div class="offers-title">🔥 Turf Offers & Discounts</div>
+
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <div class="offer-title">⚽ 20% Off on Morning Bookings</div>
+        <div class="offer-details">Book any slot before 10 AM and get 20% off automatically. Limited period!</div>
+        <div class="offer-validity">Valid till: 31st July 2025</div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-title">🎉 Weekend Combo Deal</div>
+        <div class="offer-details">Book 2 hours on Sat-Sun and get 30 mins free. Perfect for weekend matches!</div>
+        <div class="offer-validity">Valid every weekend</div>
+      </div>
+
+      <div class="offer-card">
+        <div class="offer-title">👥 Group Discount: Flat ₹500 Off</div>
+        <div class="offer-details">Groups of 10+ get ₹500 off on bookings of 90+ minutes. Use code: TEAMPLAY</div>
+        <div class="offer-validity">Valid till: 15th August 2025</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

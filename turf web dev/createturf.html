@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Turf</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class = "header">
+                <h1>Create Turf</h1>
+                <p>Enter turf details</p>
+            </div>
+        </header>
+        <div class="main-container">
+            <section class="create-turf">
+                <form id ="turfForm" onsubmit="createturf(event)">
+                    <div class="form-group">
+                        <label for="name">Turfname:</label>
+                        <input type="text" id="turfname" name="turfname" placeholder="Enter turf name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" placeholder=" Enter turf location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for ="timing">Timing:</label>
+                        <input type="time" id="timing" name="timing" placeholder="Enter timing" required>
+                        <label for="to">to</label>
+                        <input type="time" id="timing" name="timing" placeholder="Enter timing" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for ="username">User name:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for ="rating">Rating:</label>
+                        <input type="number" id="rating" name="rating" step="0.1" min="0" max="5" placeholder="Enter your rating" required>
+                    </div>
+
+                    <button type="submit" onclick="createTurf(event)">Create turf</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="createturf.js"></script>
+</body>
+</html>

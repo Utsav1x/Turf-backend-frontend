@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <title> Create Slots</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header">
+                <h1>Create Slots</h1>
+                <p>Enter slot details</p>
+            </div>
+        </header>
+        <div class="main-container">
+            <section class="create-slots">
+                <form id="slotForm" onsubmit="createslots(event)">
+                    <div class="form-group">
+                        <label for ="datatime">DateTime:</label>
+                        <input type="datetime" id="datetime" name="datatime" placeholder="Enter date and time" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="turfname">Turfname:</label>
+                        <input type="text" id="turfname" name="turfname" placeholder="Enter turf name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for ="price">Price:</label>
+                        <input type="number" id="price" name="price" placeholder="Enter price of turf" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="available">Available:</label>
+                        <input type="radio" id="available" name="available" value="true">
+                        <label for="available-true">True</label>
+                        <input type="radio" id="available" name="available" value="false">
+                        <label for="available-false">False</label>
+                    </div>
+
+                    <button type="submit" onclick="createSlots(event)">Create slot</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="createslots.js"></script>
+</body>
+</html>

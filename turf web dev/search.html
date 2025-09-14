@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Turf</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .search-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #searchInput {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .turf-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .turf-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .turf-card h3 {
+      margin: 0 0 10px;
+      color: #ff6600;
+    }
+
+    .turf-card p {
+      margin: 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Search Turf Grounds</h2>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search by name or location..." onkeyup="searchTurf()">
+  </div>
+
+  <div class="turf-list" id="turfList">
+    <div class="turf-card">
+      <h3>Five Nine Turf</h3>
+      <p>Location: Marol</p>
+    </div>
+    <div class="turf-card">
+      <h3>Home Turf</h3>
+      <p>Location: Kandivali</p>
+    </div>
+    <div class="turf-card">
+      <h3>Pavillion Sports ARENA</h3>
+      <p>Location: Mira Road </p>
+    </div>
+    <div class="turf-card">
+      <h3>Gurunanak Sports Turf</h3>
+      <p>Location: Santacruz</p>
+    </div>
+  </div>
+
+  <script>
+    function searchTurf() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.turf-card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

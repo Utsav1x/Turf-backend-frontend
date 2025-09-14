@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class ="header">
+                <h1>Create User</h1>
+                <p>Enter your details</p>
+            </div>
+        </header>
+        <div class = "main-container">
+            <section class = "create-user">
+                <form id="userForm" onsubmit="createuser(event)">
+                    <div class = "form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for ="password">Password:</label>
+                        <input type="text" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for = "number">Number:</label>
+                        <input type="text" id="number" name="number" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for ="type">Type:</label>
+                        <input type = "checkbox" id="type" name="type" value="admin" placeholder="Admin">
+                        <label for ="type-admin">Admin</label>
+                        <input type = "checkbox" id="type" name="type" value="user" placeholder="User">
+                        <label for ="type-user">User</label>
+                    </div>
+
+                    <button type = "submit" onclick="createUser(event)">Create User</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src = "createuser.js"></script>
+</body>    
